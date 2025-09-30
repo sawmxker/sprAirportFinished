@@ -1,0 +1,70 @@
+﻿<Page x:Class="sprAirport.Project.PagesAccs.PageCreateAcc"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:sprAirport.Project.PagesAccs"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="PageCreateAcc">
+
+    <Page.Resources>
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="10" 
+                                BorderThickness="0"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent" >
+
+            <TextBlock Text="ФИО пользователя" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtFullName" Width="200" Height="25" Margin="0,0,0,5"/>
+
+            <TextBlock Text="Логин" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtLogin" Width="200" Height="25" Margin="0,0,0,5"/>
+
+            <TextBlock Text="Пароль" FontWeight="Bold" Margin="0,0,0,5"/>
+            <PasswordBox x:Name="pbPassword" Width="200" Height="25" Margin="0,0,0,5"/>
+
+            <TextBlock Text="Подтвердите пароль" FontWeight="Bold" Margin="0,0,0,5"/>
+            <PasswordBox x:Name="pbConfirmPassword" Width="200" Height="25" Margin="0,0,0,10"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                <Button x:Name="btnRegister"
+                        Content="Зарегистрировать"
+                        Width="140"
+                        Height="30"
+                        Margin="5,0"
+                        Background="#EE88A6EE"
+                        Cursor="Hand"
+                        Padding="5"
+                        Style="{StaticResource RoundedButtonStyle}" Click="btnRegister_Click"/>
+
+                <Button x:Name="btnCancel"
+                        Content="Отмена"
+                        Width="100"
+                        Height="30"
+                        Margin="5,0"
+                        Background="#FF525961"
+                        Cursor="Hand"
+                        Padding="5"
+                        Style="{StaticResource RoundedButtonStyle}" Click="btnCancel_Click"/>
+            </StackPanel>
+            <TextBlock x:Name="txtMessage" Text="" Foreground="#ffc821" Margin="0,10,0,0" TextWrapping="Wrap" Width="200"/>
+        </StackPanel>
+    </Grid>
+</Page>
